@@ -65,7 +65,7 @@ Find your container name
 
 **docker ps**
 
-Example: pedantic_payne (your name will differ).
+Example: elastic_cori (your name will differ).
 
 Enter the container
 
