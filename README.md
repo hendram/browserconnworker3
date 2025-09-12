@@ -53,13 +53,13 @@ The workers run in parallel to share the scraping load, increasing the speed and
 ### 📥 Download
 
 ```bash
-docker pull ghcr.io/hendram/puppeteerworker1
+docker pull ghcr.io/hendram/puppeteerworker3
 ```
 
 ### ▶️ Start
 
 ```bash
-docker run -it -d --network=host ghcr.io/hendram/puppeteerworker1 bash
+docker run -it -d --network=host ghcr.io/hendram/puppeteerworker3 bash
 ```
 
 ### 🔍 Check Running Container
@@ -70,7 +70,7 @@ docker ps
 
 ```bash
 CONTAINER ID   IMAGE                                 NAME              STATUS
-123abc456def   ghcr.io/hendram/puppeteerworker1      pedantic_payne    Up 5 minutes
+123abc456def   ghcr.io/hendram/puppeteerworker3      pedantic_payne    Up 5 minutes
 ```
 
 ### 📦 Enter Container
@@ -82,7 +82,7 @@ docker exec -it pedantic_payne /bin/bash
 ### 🏃 Run the Service
 
 ```bash
-cd /home/browserconnworker1
+cd /home/browserconnworker3
 node index.js
 ```
 
