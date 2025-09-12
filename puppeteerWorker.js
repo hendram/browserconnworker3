@@ -16,6 +16,7 @@ const results = [];
       try {
         linkBrowser = await puppeteer.launch({
           headless: true,
+          timeout: 60000,
           args: [
             "--no-sandbox",
             "--disable-setuid-sandbox",
