@@ -43,7 +43,6 @@ const results = [];
           );
           if (found) {
             results.push({ text, metadata: { url: link, date: new Date().toISOString(), sourcekb: "external", searched: query.searched } });
-            console.log(" ^|^e Found query in link:", link);
           }
         }
       } catch (err) {
