@@ -3,6 +3,24 @@ import * as puppeteer from "puppeteer";
 // helper
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+// Utility function for structured logging of scraping results
+function logScrapingResults(results, jobId = 3) {
+  console.log(JSON.stringify({
+    level: "INFO",
+    timestamp: new Date().toISOString(),
+    logger: "web-scraper",
+    message: "Scraping completed successfully",
+    jobId: jobId,
+    results_count: results.length,
+    sample_result: results.length > 0 ? {
+      text_preview: results[0].text.slice(0, 100), // first 100 chars
+      url: results[0].metadata?.url,
+      sourcekb: results[0].metadata?.sourcekb
+    } : null
+  }));
+}
+
+
 export async function runScraper(query) {
 
 const results = [];
@@ -52,6 +70,8 @@ const results = [];
         if (linkBrowser) try { await linkBrowser.close(); } catch {}
       }
     }
+
+logScrapingResults(results, 3);
 
 return {jobId:3, results};
 
